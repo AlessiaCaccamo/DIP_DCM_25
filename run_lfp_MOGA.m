@@ -34,9 +34,9 @@ scores2=scores1;
 % Set ga options
 options1 = optimoptions('gamultiobj','UseParallel', ...
     true,'PopulationSize', size(pop,1));%, 'PlotFcn',@gaplotscoresm @gaplotdistnace or 'PlotFcn',@gaplotscorediversity);
-options1.CrossoverFcn = @crossoverscattered; % Apply crososver function
+options1.CrossoverFcn = @crossoverscattered; % Apply crossover function
 % options1.CrossoverFcn = @crossovertwopoint;
-%options1.MutationFcn=@mutationuniform;
+% options1.MutationFcn=@mutationadaptfeasible; % Change as needed
 
 options2 = options1;
 % add to save output from each generation
