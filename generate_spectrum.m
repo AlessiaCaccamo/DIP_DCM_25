@@ -1,3 +1,4 @@
+% Alessia Caccamo, University of Exeter, September 2023
 function psd_m = generate_spectrum(param_values, freq) % Return the model spectrum
 x0 = zeros(1,13); % Initial conditions
 x=zeros(1,13); % Vector of state variables
