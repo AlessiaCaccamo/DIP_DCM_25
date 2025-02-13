@@ -1,3 +1,4 @@
+% Alessia Caccamo, University of Exeter, September 2023
 function MOGA_params_matrix=save_dcm_priors(out_total,data,freq, n, m) % out_total is 1000x1 containing out structures
 % Select priors for DCM based on the optimal regions of parameter space
 % identified by MOGA
