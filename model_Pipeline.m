@@ -1,3 +1,4 @@
+% Alessia Caccamo, University of Exeter, September 2023
 function model_Pipeline(total_num, select_num) % 1000 total, 400 selected. I've used 5 and 5 as a trial
     % MODEL_PIPELINE Executes the LFP modeling pipeline with given parameters.
     %
