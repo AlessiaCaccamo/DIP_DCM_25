@@ -1,5 +1,5 @@
+% PhD Mathematics and Statistics, Thesis Chapter 1, Alessia Caccamo, University of Exeter, January 2024
 % Plot model and data spectra
-% Alessia Caccamo, University of Exeter, September 2023
 function [model_1_all, model_2_all] = plot_lfp_spectra(DCM_models, m)
 figure;
 for i = 1:2
