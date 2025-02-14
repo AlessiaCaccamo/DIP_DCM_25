@@ -1,4 +1,4 @@
-% Alessia Caccamo, University of Exeter, September 2023
+% PhD Mathematics and Statistics, Thesis Chapter 1, Alessia Caccamo, University of Exeter, January 2024
 function DCM=run_lfp_hybrid(MOGA_params,nsim,data,freq) %Return DCM structure
 
 DCM = [];
