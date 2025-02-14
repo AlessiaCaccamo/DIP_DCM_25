@@ -1,4 +1,4 @@
-% Alessia Caccamo, University of Exeter, September 2023
+% PhD Mathematics and Statistics, Thesis Chapter 1, Alessia Caccamo, University of Exeter, January 2024
 function plot_LFP_params(DCM_models, m) % Function to extract and plot the parameter estimates 
 params_all=zeros(27,2,m); % Matrix of parameter sets consisting of 27 parameters, 2 experimental conditions/datasets, and m number of repeats
 log_params_all=zeros(27,2,m); % Log scalings 
