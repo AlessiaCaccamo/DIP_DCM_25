@@ -1,6 +1,5 @@
 % PhD Mathematics and Statistics, Thesis Chapter 1, Alessia Caccamo, University of Exeter, January 2024
 function fitall = fitness_MOGA_spm_lfp(param_values, paramsvec, data, paramstoest,freq)
-warning('off', 'signal:finddelay:noSignificantCorrelationScalar');
 MOGA_lfp_params;
 paramsinput = paramsvec;
 paramsinput(paramstoest) = param_values;
