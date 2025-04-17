@@ -21,7 +21,7 @@ options.spatial      ='LFP';%- 'ECD', 'LFP' or 'IMG'     (see spm_erp_L)
 options.model        ='LFP';%- 'ERP', 'SEP', 'CMC', 'LFP', 'NMM' or 'MFM'
 
 DCM.options = options;
-
+% Copyright (C) 2008 Wellcome Trust Centre for Neuroimaging
 % check options
 %==========================================================================
 drawnow
