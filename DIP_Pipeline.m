@@ -29,4 +29,5 @@ function DIP_Pipeline(total_num, select_num)
     end 
 end
 
+% make plots via DIP_plots_pipeline.m
 
