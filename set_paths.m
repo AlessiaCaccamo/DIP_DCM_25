@@ -2,12 +2,8 @@
  % respective priors
  addpath('/Users/alessiacaccamo/Documents/Exeter/Data/spm12/spm12/toolbox/spectral');
  addpath('/Users/alessiacaccamo/Documents/Exeter/Data/spm12/spm12/external/fieldtrip/utilities');
- addpath('/Users/alessiacaccamo/Documents/Exeter/Data/ForAlessia_SZ_VisualGammaVirtualElectrodesSPM/dcm_meeg');
- addpath('/Users/alessiacaccamo/Documents/Exeter/Data/ForAlessia_SZ_VisualGammaVirtualElectrodesSPM/Neural_Models');
- addpath('/Users/alessiacaccamo/Documents/Exeter/Data/ForAlessia_SZ_VisualGammaVirtualElectrodesSPM')
+ addpath('/Users/alessiacaccamo/Documents/Exeter/Data/spm12/spm12/toolbox/dcm_meeg');
+ addpath('/Users/alessiacaccamo/Documents/Exeter/Data/spm12/spm12/toolbox/Neural_Models');
+ addpath('/Users/alessiacaccamo/Documents/Exeter/Data/DIP_DCM_25') % path where this folder is stored
  
-
-% function data =  load_data_spectra()
-%          data_psd=load(filename);
-% end
 
