@@ -167,7 +167,7 @@ D_DIP(ii) = mean(diff_samples);
 BCI_DIP(:,ii) = prctile(diff_samples, [2.5, 97.5]);
 d(ii)=(mean(random_samples_post) - mean(random_samples_pre))/sqrt((var(random_samples_post)+var(random_samples_pre))/2);
 
-
+figure;
 valid_idx = ...
     (abs(d') >= 0.2) & ...                      
     ((BCI_DIP(:,1) > 0 & BCI_DIP(:,2) > 0) | ...       
@@ -175,18 +175,13 @@ valid_idx = ...
 filtered_diff = D_DIP(valid_idx);
 filtered_CI = BCI_DIP(valid_idx, :);
 filtered_params = paramsvec(valid_idx);
-
 ci_width = abs(filtered_CI(:,2) - filtered_CI(:,1));
 [~, sorted_idx] = sort(ci_width, 'descend');
-
 b = bar(1:length(sorted_idx), filtered_diff(sorted_idx), 'FaceColor', 'k', 'EdgeColor', 'k', 'LineWidth', 0.5);
 hold on;
-
 lower_error = filtered_diff(sorted_idx) - filtered_CI(sorted_idx,1)';
 upper_error = filtered_CI(sorted_idx,2)' - filtered_diff(sorted_idx);
-
 errorbar(1:length(sorted_idx), filtered_diff(sorted_idx), lower_error, upper_error, 'k', 'LineWidth', 1.5, 'LineStyle', 'none');
-
 ylabel('Scz - Ctl');
 xticks(1:length(sorted_idx));
 xticklabels(filtered_params(sorted_idx));
@@ -198,6 +193,7 @@ ax.YGrid = 'off';
 ax.FontSize = 14;
 
 end
+
 
 
 
