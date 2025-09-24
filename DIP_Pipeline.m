@@ -1,6 +1,6 @@
 % Alessia Caccamo, University of Exeter, January 2024
 function DIP_Pipeline(total_num, select_num) 
-    % MODEL_PIPELINE Executes the LFP modeling pipeline with given parameter bounds.
+    % MODEL_PIPELINE Executes the DIP-DCM modeling pipeline for the LFP NMM with given parameter bounds.
     % INPUTS:
     % total_num   - Total number of GA explorations (e.g., 1000).
     % select_num  - Number of selected priors (e.g., 400).
@@ -26,14 +26,7 @@ function DIP_Pipeline(total_num, select_num)
     DCM=run_lfp_hybrid(GA_params_matrices{i},nsim,data_psd,freq_bins); % Run a DCM for each of the selected priors. 
     DCM.name = ['Grand_LFP_dataset_' num2str(i) '_nsim_' num2str(nsim) '_' DCM.name];
     save(DCM.name, 'DCM', spm_get_defaults('mat.format'));
-    DCM_total{nsim}=DCM; % Store the DCM structure for each prior into the cell array DCM_total
-    end
-    DCM_totals{i} = DCM_total; % Store DCM for the two datasets into DCM_totals
     end 
-    [model_1_all, model_2_all]=plot_lfp_spectra(DCM_totals, select_num); % Plot model spectra aginst the data using the DCM-generated posterior parameter sets
-    save('DIP_LFP_model.mat', 'model_1_all', 'model_2_all');
-    %plot_LFP_params(DCM_totals, select_num); % Plot the parameter distributions and the inferences between the two datasets. 
-    %save_figures % Save the generated figures. 
-end 
+end
 
 
