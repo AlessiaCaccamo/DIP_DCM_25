@@ -15,7 +15,7 @@ function DIP_plots_Pipeline(total_num, select_num)
     [data_psd,freq_bins]=load_data(i);  % Load the row vector data_psd and row vector freq_bins 
     out_total=cell(total_num,1); % GA output for each repeat (defined by total_num), for each dataset
     for nsim=1:total_num % Run or load GA results for each repeat
-    load(['GA_LFP_dataset_' num2str(i) '_nsim_' num2str(nsim) '.mat'], 'out'); 
+    load(['GA_LFP_dataset_' num2str(i) '_nsim_' num2str(nsim) '.mat']); 
     out_total{nsim}=out; % Store outputs associated with each repeat in out_total cell array
     end
     out_totals{i} = out_total; % Store all outputs for both datasets in the cell array out_totals
@@ -23,10 +23,10 @@ function DIP_plots_Pipeline(total_num, select_num)
     DCM_total=cell(1,select_num); % DCM structures for each selected GA prior.
     for nsim=1:select_num 
     if i==1
-    load(['Grand_LFP_dataset_' num2str(i) '_nsim_' num2str(nsim) '.mat']);
+    load(['DCM_LFP_dataset_' num2str(i) '_nsim_' num2str(nsim) '.mat']);
     else
     if i==2
-    load(['Grand_LFP_dataset_' num2str(i) '_nsim_' num2str(nsim) '.mat']);
+    load(['DCM_LFP_dataset_' num2str(i) '_nsim_' num2str(nsim) '.mat']);
     end
     DCM_total{nsim}=DCM; % Store the DCM structure for each prior into the cell array DCM_total
     end
