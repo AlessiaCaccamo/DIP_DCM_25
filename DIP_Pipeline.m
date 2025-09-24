@@ -1,5 +1,5 @@
 % Alessia Caccamo, University of Exeter, January 2024
-function DIP_Pipeline(total_num, select_num) % 1000 total, 400 selected. I've used 5 and 5 as a trial
+function DIP_Pipeline(total_num, select_num) 
     % MODEL_PIPELINE Executes the LFP modeling pipeline with given parameter bounds.
     % INPUTS:
     % total_num   - Total number of GA explorations (e.g., 1000).
