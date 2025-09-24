@@ -24,8 +24,7 @@ function DIP_Pipeline(total_num, select_num)
     DCM_total=cell(1,select_num); % DCM structures for each selected GA prior.
     for nsim=1:select_num 
     DCM=run_lfp_hybrid(GA_params_matrices{i},nsim,data_psd,freq_bins); % Run a DCM for each of the selected priors. 
-    DCM.name = ['Grand_LFP_dataset_' num2str(i) '_nsim_' num2str(nsim) '_' DCM.name];
-    save(DCM.name, 'DCM', spm_get_defaults('mat.format'));
+    save(['DCM_LFP_dataset_' num2str(i) '_nsim_' num2str(nsim) '.mat'], 'DCM');
     end 
 end
 
