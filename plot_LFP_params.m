@@ -162,38 +162,43 @@ for n = 1:1e5
     random_samples_pre(n) = x(find(cumulative_density_pre >= rand_num, 1, 'first')); % Inverse transform sampling
     random_samples_post(n) = x(find(cumulative_density_post >= rand_num, 1, 'first'));
 end
+diff_samples = random_samples_pre_PL_DIP_allSub(:,k,ii) - random_samples_pre_PL_DIP_allSub(:,j,ii);
+D_DIP(ii) = mean(diff_samples);
+BCI_DIP(:,ii) = prctile(diff_samples, [2.5, 97.5]);
 d(ii)=(mean(random_samples_post) - mean(random_samples_pre))/sqrt((var(random_samples_post)+var(random_samples_pre))/2);
-xlabel('Parameter Value');
-ylabel('Density');
-paramsvec = {'R1','R2','Te','Ti','He', 'G1', 'G2', 'G3', 'G4', 'G5','A1','A2','A3','De','Di','a1','a2','b1','b2','c1','c2','d1','d2','d3','d4','f1','f2'};
-title(paramsvec{ii})
-hold off;
-end
-legend('Ctl', 'Scz');
 
-%save('inferences_hybrid_ctl_scz_150_gen.mat', 'd');
 
-colors = jet(10);  % Colormap
-desaturation_factor = 0.5; 
-neutral_color = [0.5, 0.5, 0.5]; 
-colors = (1 - desaturation_factor) * colors + desaturation_factor * neutral_color;
-figure; % Plot the inferences
-subplot(2, 3, 4);
-bar(1:15, d, 'FaceColor', colors(1,:));
+valid_idx = ...
+    (abs(d') >= 0.2) & ...                      
+    ((BCI_DIP(:,1) > 0 & BCI_DIP(:,2) > 0) | ...       
+    (BCI_DIP(:,1) < 0 & BCI_DIP(:,2) < 0) );   
+filtered_diff = D_DIP(valid_idx);
+filtered_CI = BCI_DIP(valid_idx, :);
+filtered_params = paramsvec(valid_idx);
+
+ci_width = abs(filtered_CI(:,2) - filtered_CI(:,1));
+[~, sorted_idx] = sort(ci_width, 'descend');
+
+b = bar(1:length(sorted_idx), filtered_diff(sorted_idx), 'FaceColor', 'k', 'EdgeColor', 'k', 'LineWidth', 0.5);
 hold on;
-xticks(1:15);
-xticklabels(paramsvec);
-xlabel('Parameter');
-ylabel("Cohen's d (Post-Pre)");
-title('Placebo Hybrid');
-yline(0.2, 'r--');
-yline(0.5, 'k--');
-yline(0.8, 'k--');
-yline(-0.2, 'r--');
-yline(-0.5, 'k--');
-yline(-0.8, 'k--');
+
+lower_error = filtered_diff(sorted_idx) - filtered_CI(sorted_idx,1)';
+upper_error = filtered_CI(sorted_idx,2)' - filtered_diff(sorted_idx);
+
+errorbar(1:length(sorted_idx), filtered_diff(sorted_idx), lower_error, upper_error, 'k', 'LineWidth', 1.5, 'LineStyle', 'none');
+
+ylabel('Scz - Ctl');
+xticks(1:length(sorted_idx));
+xticklabels(filtered_params(sorted_idx));
+xtickangle(90);
+title('DIP');
+ax = gca;
+ax.XGrid = 'on';
+ax.YGrid = 'off';
+ax.FontSize = 14;
 
 end
+
 
 
 
