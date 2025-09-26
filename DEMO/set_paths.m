@@ -2,6 +2,7 @@
  % respective priors
  % Assumes this script is run from a directory containing the spm12 toolbox and the DIP_DCM_25 toolbox.
 % Adjust the relative path below if executing from a different location.
+ addpath('spm12/spm12');
  addpath('spm12/spm12/toolbox/spectral');
  addpath('spm12/spm12/external/fieldtrip/utilities');
  addpath('spm12/spm12/toolbox/dcm_meeg');
