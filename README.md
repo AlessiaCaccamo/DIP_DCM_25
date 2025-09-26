@@ -1,9 +1,9 @@
 # DIP-DCM toolbox
 
 ## Getting started
-## Prerequisites
+### Prerequisites
 The spm12 toolbox is required, please download it from https://www.fil.ion.ucl.ac.uk/spm/ 
-## Downloading
+### Downloading
 Download the folder
 Add spm12 to the DEMO folder and unzip it to run the demo.
 Run DEMO.m script.
