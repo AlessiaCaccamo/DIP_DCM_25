@@ -13,5 +13,5 @@
     total_num=1;
     select_num=1;
     DIP_Pipeline(total_num, select_num) % Run DIP-DCM
-    DIP_plots_Pipeline(total_num, select_num) % make plots 
+    %DIP_plots_Pipeline(total_num, select_num) % make plots 
 
