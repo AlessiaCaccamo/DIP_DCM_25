@@ -1,4 +1,5 @@
 # DIP-DCM toolbox
+This is a MATLAB toolbox for identifying parameter priors for Dynamic Causal Modelling (DCM) using a genetic algorithm (GA).
 
 ## Getting started
 ### Prerequisites
