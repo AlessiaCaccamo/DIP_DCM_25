@@ -16,4 +16,9 @@ Run DEMO.m script.
 
 To use this approach with a different model architecture, please contact a.caccamo@exeter.ac.uk.
 
-Alessia Caccamo, University of Exeter, January 2024.
+## Citing the toolbox
+If you use the DIP-DCM toolbox, please cite the following paper: Caccamo, A., Dunstan, D.M., Richardson, M.P., Shaw, A.D., Goodfellow, M. (2025). Dynamics-Informed Priors (DIP) for Neural Mass Modelling. bioRxiv. doi: https://doi.org/10.1101/2025.09.26.678721.
+
+## Code availability
+The DIP-DCM toolbox code is open source, under the terms of the GNU General Public License. This works on Windows, Linux, and macOS with an installed version of SPM. The code was originally used with SPM12 only. Code includes third-party functions (SPM, https://www.fil.ion.ucl.ac.uk/spm), with their respective copyright. 
+
